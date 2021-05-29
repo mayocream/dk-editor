@@ -14,6 +14,7 @@ module.exports = {
         ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
       },
     ],
+    '@snowpack/plugin-postcss',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -27,9 +28,11 @@ module.exports = {
     /* ... */
   },
   devOptions: {
-    /* ... */
+    port: 8081,
+    open: 'none',
+    tailwindConfig: './tailwind.config.js',
   },
   buildOptions: {
     /* ... */
   },
-};
+}
